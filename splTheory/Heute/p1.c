@@ -16,5 +16,5 @@ int main() {
       oCount++;
     }
   }
-  printf("Even: %i\nOdd: %i\n", eCount, oCount);
+  printf("Even:  %i\nOdd: %i\n", eCount, oCount);
 }

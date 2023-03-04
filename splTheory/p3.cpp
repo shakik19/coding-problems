@@ -19,7 +19,7 @@ int main() {
         coef = coef * (i - j + 1) / j;
       printf("%4d", coef);
     }
-    printf("\n");
+    printf("\n ");
   }
   return 0;
 }

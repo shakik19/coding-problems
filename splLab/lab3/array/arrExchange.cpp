@@ -10,16 +10,14 @@ int main() {
   int a, b;
   cin >> a;
   ll aa[a];
-  // Taking 2 array inputs
   for (int i = 0; i < a; i++) {
-    cin >> aa[i];
+    scanf("%i", &aa[i]);
   }
   cin >> b;
   ll bb[b];
   for (int i = 0; i < b; i++) {
-    cin >> bb[i];
+    scanf("%i", &bb[i]);
   }
-  // swapping
   int max;
   (a > b) ? max = a : max = b;
   ll temp[max];
@@ -44,34 +42,35 @@ int main() {
     }
   }
   if (a == b) {
-    cout << "Array A : ";
+    printf("Array A : ");
     for (int i = 0; i < a; i++) {
-      cout << aa[i] << " ";
+      printf("%i ", aa[i]);
     }
-    cout << "\nArray B : ";
+    printf("\nArray B : ");
     for (int i = 0; i < a; i++) {
-      cout << bb[i] << " ";
+      printf("%i ", bb[i]);
     }
-    cout << "\na = b\n";
+    printf("\na = b\n");
   } else if (a > b) {
-    cout << "Array A : ";
+    printf("Array A : ");
     for (int i = 0; i < b; i++) {
-      cout << aa[i] << " ";
+      printf("%i ", aa[i]);
     }
-    cout << "\nArray B : ";
+    printf("\nArray B : ");
     for (int i = 0; i < a; i++) {
       cout << temp[i] << " ";
+      printf("%i ", temp[i]);
     }
-    cout << "\na > b\n";
+    printf("\na > b\n");
   } else if (b > a) {
-    cout << "Array A : ";
+    printf("Array A : ");
     for (int i = 0; i < b; i++) {
-      cout << temp[i] << " ";
+      printf("%i ", temp[i]);
     }
     cout << "\nArray B : ";
     for (int i = 0; i < a; i++) {
-      cout << bb[i] << " ";
+      printf("%i ", bb[i]);
     }
-    cout << "\na < b\n";
+    printf("\na < b\n");
   }
 }

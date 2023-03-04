@@ -38,7 +38,7 @@ int main() {
       }
       cout << ans << endl;
     } else {
-      cout << 0 << endl;
+      cout << 00 << endl;
     }
   }
 }

@@ -5,6 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
+<<<<<<< HEAD
             "name": "(gdb) Bash on Windows Launch",
             "type": "cppdbg",
             "request": "launch",
@@ -34,6 +35,8 @@
             ]
         },
         {
+=======
+>>>>>>> a0ec6b32eaa882136bdf3a08a3c394555e2d8e19
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",

@@ -1,33 +1,21 @@
-#include <bits/stdc++.h>
+#include "bits/stdc++.h"
 using namespace std;
+
+#define ll long long
+#define ull unsigned long long
+#define imx INT_MAX
+#define imn INT_MIN
 
 int main() {
   int t;
   cin >> t;
   while (t--) {
-    clock_t start, finish;
-    start = clock();
     int n;
     cin >> n;
-    int a1 = 0, a2 = 0;
-    bool chk = false;
-    for (int i = 1; i <= n; i++) {
-      for (int j = (n / 4); j >= 1; j--) {
-        long long ans = (int)(i * j * (pow(i, (j - 1)) + pow(j, (i - 1))));
-        if (ans == n) {
-          cout << i << " " << j << endl;
-          chk = true;
-        }
-      }
-      if (chk) {
-        cout << i << endl;
-        break;
-      }
-    }
-    if (!chk) {
+    if (n % 2 == 0) {
+      cout << 1 << " " << n / 2 << endl;
+    } else {
       cout << -1 << endl;
     }
-    finish = clock();
-    cout << (finish - start) << "ms" << endl;
   }
 }

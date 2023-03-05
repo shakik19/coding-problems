@@ -17,20 +17,25 @@ int main() {
   for (int row = 1; row <= n; row++) {
     for (int col = 1; col <= m; col++) {
       //** "S" printing
-      // if (row == 1 || row == nn || row == n ||
-      //     ((col == 1 && (row < nn))) ||
-      //     ((col == m && (row > nn)))) {
-      //   cout << "S ";
-      // } else {
-      //   cout << "  ";
-      // }
+      if (row == 1 || row == nn || row == n || ((col == 1 && (row < nn))) ||
+          ((col == m && (row > nn)))) {
+        cout << "S";
+        if (col == m) {
+          for (int space = 1; space <= m; space++) {
+            /* code */
+            cout << ".";
+          }
+        }
+      } else {
+        cout << ".";
+      }
       // cout << "   ";
       //** "H" printing
-      // if (col == 1 or col == m || row == nn) {
-      //   cout << "H ";
-      // } else {
-      //   cout << "  ";
-      // }
+      if (col == 1 or col == m || row == nn) {
+        cout << "H";
+      } else {
+        cout << "*";
+      }
 
       // cout << "   ";
 
@@ -40,7 +45,7 @@ int main() {
       //     (((row != 1 and row > nn) and
       //       (col == mm + col || col == mm - col))) ||
       //     row == nn) {
-      //   cout << "A ";
+      //   cout << "A";
       // } else {
       //   cout << "  ";
       // }
@@ -48,12 +53,12 @@ int main() {
       // if (row > nn && (col == 1 || col == m) || (row == nn)) {
       //   int flag = 0;
       //   if ((row > 1 && row < nn) && (col == mm - aa || col == mm + aa)) {
-      //     cout << "A ";
+      //     cout << "A";
       //     aa++;
       //     flag = 1;
       //   }
       //   if (flag == 0) {
-      //     cout << "A ";
+      //     cout << "A";
       //   }
       // } else {
       //   cout << "  ";
@@ -62,19 +67,31 @@ int main() {
       // if (col == 1 || col == m || row == 1 || row == nn) {
       //   cout << "A ";
       // } else {
-      //   cout << "  ";
+      //   cout << ".";
+      // }
+      //*?try 4
+      // if (col == mm || col == m - mm ||
+      //     (row == nn && col > mm && col < (m - mm))) {
+      //   cout << "A ";
+      // } else {
+      //   cout << "..";
       // }
       // cout << "   ";
 
       //** "K" printing
-      if (col == 1 || (col == 2 && row == nn) || (row == (8 -))) {
-        cout << "K ";
-      } else {
-        cout << "  ";
-      }
+      // if (col == 1 || (col == 2 && row == nn) || (row == (8 - 5))) {
+      //   cout << "K";
+      // } else {
+      //   cout << "  ";
+      // }
       // cout << "   ";
 
-      //** "I" printing
+      // //** "I" printing
+      // if (col == mm) {
+      //   cout << "I";
+      // } else {
+      //   cout << " ";
+      // }
       // cout << "   ";
 
       //** "K" printing
@@ -83,4 +100,17 @@ int main() {
     }
     cout << endl;
   }
+  // for (int row = 1; row <= n; row++) {
+  //   for (int col = 1; col <= m; col++) {
+  //     for (int space = 1; space <= m + 3; space++) {
+  //       cout << ".";
+  //     }
+  //     //** "H" printing
+  //     if (col == 1 or col == m || row == nn) {
+  //       cout << "H";
+  //     } else {
+  //       cout << "*";
+  //     }
+  //   }
+  // }
 }

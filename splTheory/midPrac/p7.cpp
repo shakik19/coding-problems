@@ -7,11 +7,9 @@ using namespace std;
 #define imn INT_MIN
 
 int main() {
-  int n = 5, m = 3;
-  int nn = 3, mm = 2;
-  for (int row = 1; row <= n; row++) {
-    for (int col = 1; col <= m; col++) {
-        if(row !)
-    }
-  }
+  int a = (float)15 / 4;
+  float b = a++ * a--;
+  b = 3 / 2;
+  cout << b << endl;
+  cout << endl;
 }

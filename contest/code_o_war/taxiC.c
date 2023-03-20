@@ -1,5 +1,4 @@
-#include "bits/stdc++.h"
-using namespace std;
+#include "stdio.h"
 
 #define ll long long
 #define ull unsigned long long
@@ -8,16 +7,16 @@ using namespace std;
 
 int main() {
   int n;
-  cin >> n;
+  scanf("%i", &n);
   if (n == 1) {
-    cout << 1 << endl;
+    printf("1\n");
     return 0;
   }
   int one = 0, two = 0, three = 0;
   int taxi = 0;
   for (int i = 0; i < n; i++) {
     int num;
-    cin >> num;
+    scanf("%i", &num);
     if (num == 1) {
       one++;
     } else if (num == 2) {
@@ -46,7 +45,7 @@ int main() {
     taxi += two / 2;
     two = two % 2;
   }
-  if (one >= 2 and two == 1) {
+  if (one >= 2 && two == 1) {
     taxi++;
     one = one - 2;
     two = 0;
@@ -65,5 +64,5 @@ int main() {
     taxi += three;
   }
   //   sort(arr, arr + n);
-  cout << taxi << endl;
+  printf("%i\n", taxi);
 }

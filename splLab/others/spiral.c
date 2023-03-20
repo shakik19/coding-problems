@@ -1,9 +1,7 @@
-#include "bits/stdc++.h"
-using namespace std;
-
+#include <stdio.h>
 int main() {
   int row, col;
-  cin >> row >> col;
+  scanf("%i %i", &row, &col);
   int mat[row][col];
   //   row = 5, col = 2;
   int arr[row * col];
@@ -13,11 +11,11 @@ int main() {
   //* Taking Matrix Input
   for (int i = 0; i < row; i++) {
     for (int j = 0; i < col; j++) {
-      cin >> mat[i][j];
+      scanf("%i", &mat[i][j]);
     }
   }
 
-    //* Spiraling
+  //* Spiraling
   int colReducer = 0, rowReducer = 0, pos = 0;
   while (pos < (row * col) - 1) {
     for (int up = colReducer; ((up < col - colReducer)); up++) {
@@ -46,7 +44,7 @@ int main() {
 
   //* Printing spiral array
   for (int i = 0; i < pos; i++) {
-    cout << arr[i] << " ";
+    printf("%i ", arr[i]);
   }
-  cout << endl;
+  printf("\n");
 }

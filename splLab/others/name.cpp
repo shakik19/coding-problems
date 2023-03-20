@@ -41,66 +41,58 @@ int main() {
 
       //** "A" printing
       //*?Try 1
-      // if ((col == mm and row == 1) ||
-      //     (((row != 1 and row > nn) and
-      //       (col == mm + col || col == mm - col))) ||
-      //     row == nn) {
-      //   cout << "A";
-      // } else {
-      //   cout << "  ";
-      // }
-      //*?Try 2
-      // if (row > nn && (col == 1 || col == m) || (row == nn)) {
-      //   int flag = 0;
-      //   if ((row > 1 && row < nn) && (col == mm - aa || col == mm + aa)) {
-      //     cout << "A";
-      //     aa++;
-      //     flag = 1;
-      //   }
-      //   if (flag == 0) {
-      //     cout << "A";
-      //   }
-      // } else {
-      //   cout << "  ";
-      // }
-      //*?Try 3
-      // if (col == 1 || col == m || row == 1 || row == nn) {
-      //   cout << "A ";
-      // } else {
-      //   cout << ".";
-      // }
-      //*?try 4
-      // if (col == mm || col == m - mm ||
-      //     (row == nn && col > mm && col < (m - mm))) {
-      //   cout << "A ";
-      // } else {
-      //   cout << "..";
-      // }
-      // cout << "   ";
-
-      //** "K" printing
-<<<<<<< HEAD:splLab/others/name.cpp
-      // if (col == 1 || (col == 2 && row == nn) || (row == (8 - 5))) {
-      //   cout << "K";
-      // } else {
-      //   cout << "  ";
-      // }
-=======
-      if (col == 1 || (col == 2 && row == nn) || (row == (8 - 2))) {
-        cout << "K ";
+      if ((col == mm and row == 1) ||
+          (((row != 1 and row > nn) and
+            (col == mm + col || col == mm - col))) ||
+          row == nn) {
+        cout << "A";
       } else {
         cout << "  ";
       }
->>>>>>> 46acb38 (commit):splLab/name.cpp
-      // cout << "   ";
+      //*?Try 2
+      if (row > nn && (col == 1 || col == m) || (row == nn)) {
+        int flag = 0;
+        if ((row > 1 && row < nn) && (col == mm - aa || col == mm + aa)) {
+          cout << "A";
+          aa++;
+          flag = 1;
+        }
+        if (flag == 0) {
+          cout << "A";
+        }
+      } else {
+        cout << "  ";
+      }
+      //*?Try 3
+      if (col == 1 || col == m || row == 1 || row == nn) {
+        cout << "A ";
+      } else {
+        cout << ".";
+      }
+      //*?try 4
+      if (col == mm || col == m - mm ||
+          (row == nn && col > mm && col < (m - mm))) {
+        cout << "A ";
+      } else {
+        cout << "..";
+      }
+      cout << "   ";
+
+      //** "K" printing
+      if (col == 1 || (col == 2 && row == nn) || (row == (8 - 5))) {
+        cout << "K";
+      } else {
+        cout << "  ";
+      }
+      cout << "   ";
 
       // //** "I" printing
-      // if (col == mm) {
-      //   cout << "I";
-      // } else {
-      //   cout << " ";
-      // }
-      // cout << "   ";
+      if (col == mm) {
+        cout << "I";
+      } else {
+        cout << " ";
+      }
+      cout << "   ";
 
       //** "K" printing
 
@@ -108,17 +100,17 @@ int main() {
     }
     cout << endl;
   }
-  // for (int row = 1; row <= n; row++) {
-  //   for (int col = 1; col <= m; col++) {
-  //     for (int space = 1; space <= m + 3; space++) {
-  //       cout << ".";
-  //     }
-  //     //** "H" printing
-  //     if (col == 1 or col == m || row == nn) {
-  //       cout << "H";
-  //     } else {
-  //       cout << "*";
-  //     }
-  //   }
-  // }
+  for (int row = 1; row <= n; row++) {
+    for (int col = 1; col <= m; col++) {
+      for (int space = 1; space <= m + 3; space++) {
+        cout << ".";
+      }
+      //     //** "H" printing
+      if (col == 1 or col == m || row == nn) {
+        cout << "H";
+      } else {
+        cout << "*";
+      }
+    }
+  }
 }

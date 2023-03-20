@@ -1,5 +1,4 @@
-#include "bits/stdc++.h"
-using namespace std;
+#include <stdio.h>
 
 #define ll long long
 #define ull unsigned long long
@@ -12,7 +11,7 @@ int main() {
   ll arr[row][col];
   for (int i = 0; i < row; i++) {
     for (int j = 0; j < col; j++) {
-      cin >> arr[i][j];
+      scanf("%i", &arr[i][j]);
     }
   }
 
@@ -23,10 +22,9 @@ int main() {
       arr[i][j] = arr[i][j] ^ arr[i][col - j - 1];
     }
   }
-  cout << "Reversed\n";
+  printf("Reversed\n");
   for (int i = 0; i < row; i++) {
     for (int j = 0; j < col; j++) {
-      // cout << arr[i][j] << " ";
       printf("%3lli ", arr[i][j]);
     }
     printf("\n");

@@ -10,7 +10,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="503a6b64-7dc1-4947-8038-55f2bd365e99" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ICS/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ICS/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ICS/.idea/c.cpp.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ICS/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cf/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cf/1750B" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cf/1750B.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cf/1762A.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cf/1762A.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cf/1787A" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cf/1787A.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cf/859Div4/oddQueries.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/cf/859Div4/oddQueries.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cf/859Div4/oddQueries.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cf/859Div4/oddQueries.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cf/test.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cf/test.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contest/div2_856/.a.cpp.swp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contest/p1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contest/p1.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contest/p2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contest/p2.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contest/p4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contest/p4.c" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +81,7 @@
       <workItem from="1672913081654" duration="512000" />
       <workItem from="1672935121464" duration="28000" />
       <workItem from="1675104162237" duration="8000" />
+      <workItem from="1679307462153" duration="227000" />
     </task>
     <servers />
   </component>

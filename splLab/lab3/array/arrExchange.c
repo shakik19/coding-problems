@@ -1,5 +1,4 @@
-#include "bits/stdc++.h"
-using namespace std;
+#include <stdio.h>
 
 #define ll long long
 #define ull unsigned long long
@@ -8,18 +7,17 @@ using namespace std;
 
 int main() {
   int a, b;
-  cin >> a;
+  scanf("%i", &a);
   ll aa[a];
   for (int i = 0; i < a; i++) {
     scanf("%i", &aa[i]);
   }
-  cin >> b;
+  scanf("%i", &b);
+  int max = (a > b) ? a : b;
   ll bb[b];
   for (int i = 0; i < b; i++) {
     scanf("%i", &bb[i]);
   }
-  int max;
-  (a > b) ? max = a : max = b;
   ll temp[max];
   if (a == b) {
     for (int i = 0; i < a; i++) {
@@ -58,7 +56,6 @@ int main() {
     }
     printf("\nArray B : ");
     for (int i = 0; i < a; i++) {
-      cout << temp[i] << " ";
       printf("%i ", temp[i]);
     }
     printf("\na > b\n");
@@ -67,7 +64,7 @@ int main() {
     for (int i = 0; i < b; i++) {
       printf("%i ", temp[i]);
     }
-    cout << "\nArray B : ";
+    printf("\nArray A : ");
     for (int i = 0; i < a; i++) {
       printf("%i ", bb[i]);
     }

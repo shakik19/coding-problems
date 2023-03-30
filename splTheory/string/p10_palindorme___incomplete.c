@@ -16,7 +16,7 @@ int main() {
   // start
   char s[MAX];
   fgets(s, sizeof(s), stdin);
-  if (palindrome_check(s))
+  if (palindrome_check(s) == 1)
     printf("YES\n");
   else
     printf("NO\n");

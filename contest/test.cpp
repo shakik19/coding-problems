@@ -1,19 +1,49 @@
-#include "bits/stdc++.h"
+#include <bits/stdc++.h>
 using namespace std;
 
-int main(){
-	int n; cin >> n;
-	int sum = 0, arr[n];
-	for (int i = 0; i < n; ++i)
-	{
-		cin >> arr[i];
-		sum += arr[i];
-	}
-	for (int i = 1; i <= 5; ++i)
-	{
-		if((sum+i)%(n+1)!=1){
-			cout << i << endl;
-			return 0;
-		}
-	}
+int pre(string str) {
+    int len = str.size();
+    vector<int> v(len,0);
+
+    for(int i=1; i<len; i++) {
+        int j = v[i-1];
+        while(j>0 && str[i]!=str[j]) j = v[j-1];
+        if(str[i]==str[j]) j++;
+        v[i] = j;
+    }
+    return v[len-1];
+}
+
+
+int main()
+{
+    int n;
+    string str = "";
+    cin>>n;
+    while(n--)
+    {
+        int q;
+        string s;
+        cin>>q;
+        if(q==0)
+        {
+            cin>>s;
+            str+=s;
+        }
+        else
+        {
+        	    int len = str.size();
+    vector<int> v(len,0);
+
+    for(int i=1; i<len; i++) {
+        int j = v[i-1];
+        while(j>0 && str[i]!=str[j]) j = v[j-1];
+        if(str[i]==str[j]) j++;
+        v[i] = j;
+    }
+            int res = str.size() - pre(str);
+            cout<<res<<endl;
+        }
+
+    }
 }

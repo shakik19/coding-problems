@@ -12,33 +12,36 @@ int facto(int a);
 int digit_count(int a);
 
 int main() {
-  // int start, end;
-  // scanf("%i %i", &start, &end);
-  // for (int i = start; i <= end; i++) {
-  //   if (sectumSempra(i)) {
-  //     printf("Num: %i is cursed\n", i);
-  //   } else {
-  //     printf("Num: %i is not cursed\n", i);
-  //   }
-  // }
-  printf("Checker1: %2i\n", checkerFunc1(7342));
-  printf("Checker1: %2i\n", checkerFunc1(734));
+  int start, end;
+  scanf("%i %i", &start, &end);
+  if (end < start) {
+    start = start ^ end;
+    end = start ^ end;
+    start = start ^ end;
+  }
+  for (int i = start; i <= end; i++) {
+    if (sectumSempra(i)) {
+      printf("Num: %i is cursed\n", i);
+    }
+  }
+  // printf("Checker1: %2i\n", checkerFunc1(7342));
+  // printf("Checker1: %2i\n", checkerFunc1(734));
 
-  printf("\nChecker2: %2i\n", checkerFunc2(2345));
-  printf("Checker2: %2i\n", checkerFunc2(12345));
+  // printf("\nChecker2: %2i\n", checkerFunc2(2345));
+  // printf("Checker2: %2i\n", checkerFunc2(12345));
 
-  printf("\nChecker4: %i\n", checkerFunc4(71723));
-  printf("Checker4: %i\n", checkerFunc4(21223));
+  // printf("\nChecker4: %i\n", checkerFunc4(71723));
+  // printf("Checker4: %i\n", checkerFunc4(21223));
 
-  printf("\nStrong Check: %i\n", strongChecker(145));
-  printf("Defective check: %i\n", defectiveChecker(21));
+  // printf("\nStrong Check: %i\n", strongChecker(145));
+  // printf("Defective check: %i\n", defectiveChecker(21));
 }
 
 int sectumSempra(int a) {
-  if (checkerFunc1(a) == 1) {
-    if (checkerFunc2(a) == 1) {
-      if (checkerFunc4(a) == 1) {
-        if (checkerFunc3(a) == 1) {
+  if (checkerFunc1(a)) {
+    if (checkerFunc2(a)) {
+      if (checkerFunc4(a)) {
+        if (checkerFunc3(a)) {
           return 1;
         } else {
           return -1;
@@ -100,16 +103,15 @@ int defectiveChecker(int a) {
 }
 
 int checkerFunc1(int a) {
-  int end = a % 10, first, temp = a;
+  int end = a % 10, first;
   if (end == 9 || end == 2) {
     return -1;
   }
-  while (temp > 0) {
-    int last = temp % 10;
-    if (temp / 10 == 0) first = temp;
-    temp /= 10;
+  while (a > 0) {
+    int last = a % 10;
+    if (a / 10 == 0) first = a;
+    a /= 10;
   }
-  printf("%i\n", first);
   if (first == 7 || first == 1) {
     return 1;
   } else {

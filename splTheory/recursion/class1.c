@@ -4,18 +4,23 @@
 */
 
 #include "stdio.h"
-#include "stdlib.h"
 #include "string.h"
 #define MAX 65552
 
 void reverse(char *s) {
-  if (st == end) {
+  if (*s == '\0')
+    return;
+  else {
+    reverse(s + 1);
+    printf("%c", *s);
   }
 }
 
 int main() {
   char s[MAX];
   fgets(s, sizeof(s), stdin);
+  s[strcspn(s, "\n")] = '\0';
   int len = strlen(s);
   reverse(s);
+  printf("\n");
 }

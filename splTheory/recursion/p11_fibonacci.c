@@ -1,18 +1,16 @@
 #include "stdio.h"
-
-void print_fibonacchi(int first, int second, int n) {
+void fibonacci(int f, int s, int n) {
   if (n == 0) {
     printf("\n");
     return;
   } else {
-    printf("%i", second);
+    printf("%i", s);
     if (n != 1) printf(", ");
-    return print_fibonacchi(second, first + second, --n);
+    fibonacci(s, s + f, --n);
   }
 }
-
 int main() {
   int n;
   scanf("%i", &n);
-  print_fibonacchi(0, 1, n);
+  fibonacci(0, 1, n);
 }

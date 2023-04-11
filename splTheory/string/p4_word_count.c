@@ -7,9 +7,8 @@ int word_count(char s[]) {
   int len = strlen(s);
   int count = 1;
   for (int i = 0; i < len; i++) {
-    /*|| s[i] == '!' || s[i] == '.' || s[i] == ';' ||
-        s[i] == '?' || s[i] == '/' || s[i] == ','*/
-    if (s[i] == ' ') {
+    if (s[i] == ' ' || s[i] == '!' || s[i] == '.' || s[i] == ';' ||
+        s[i] == '?' || s[i] == '/' || s[i] == ',') {
       count++;
     }
   }

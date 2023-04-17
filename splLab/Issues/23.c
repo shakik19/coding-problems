@@ -1,14 +1,13 @@
-#include "stdalign.h"
 #include "stdio.h"
+#include "stdlib.h"
 #include "string.h"
 
-void *ptr = NULL;
 int find_substr(char *s1, char *s2);
 int string_length(char s[]);
 
 int main() {
   char s1[1000] = "madam", s2[1000] = "adam";
-  scanf("%s %s", s1, s2);
+  // scanf("%s %s", s1, s2);
   //   printf("%i\n", string_length(s1));
   int ans = (string_length(s1) > string_length(s2)) ? find_substr(s1, s2)
                                                     : find_substr(s2, s1);
@@ -30,7 +29,6 @@ int find_substr(char *s1, char *s2) {
   else if (*s1 == *s2)
     find_substr(++s1, ++s2);
   else if (*s1 != *s2) {
-    ptr = &s2[0];
-    find_substr(s1, ptr);
+    find_substr(s1, &s2[0]);
   }
 }

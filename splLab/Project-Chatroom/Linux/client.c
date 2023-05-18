@@ -8,15 +8,26 @@ void str_overwrite_stdout()
   fflush(stdout);
 }
 
+typedef struct data
+{
+  char name[10];
+  char msg[MSG_LEN];
+} DATA;
+
+DATA client;
+DATA host;
+
 //! Globar variables
 int CSFD = 0;
 bool s_exit_flag = false;
 bool c_exit_flag = false;
 char client_name[10] = {};
 char host_name[10] = {};
+FILE *fptr;
 
 int main(int argc, char **args)
 {
+  fptr = fopen("conv_client.txt", "w");
   //? Incorrect command line arg error handaling
   if (argc != 2 || (atoi(args[1]) > 41951 || atoi(args[1]) <= 1024))
   {
@@ -67,11 +78,11 @@ int main(int argc, char **args)
 ! outgoing buffer/messages
 */
   //! Asking client's name and getting host name
-  recv(CSFD, host_name, 10, 0);
+  recv(CSFD, host.name, 10, 0);
   printf("Enter your name: ");
-  fgets(client_name, 10, stdin);
-  client_name[strcspn(client_name, "\n")] = '\0';
-  send(CSFD, client_name, 10, 0);
+  fgets(client.name, 10, stdin);
+  client.name[strcspn(client_name, "\n")] = '\0';
+  send(CSFD, client.name, 10, 0);
 
   pthread_t read_thread, write_thread;
 
@@ -84,20 +95,24 @@ int main(int argc, char **args)
 
 void *read_msg()
 {
-  char msg_in[MSG_LEN] = {};
+  host.msg;
   while (1)
   {
-    int recieve = recv(CSFD, msg_in, MSG_LEN, 0);
+    int recieve = recv(CSFD, host.msg, MSG_LEN, 0);
     if (recieve > 0)
     {
-      printf("\r\033[31m%s: %s\033[0m\n", host_name, msg_in);
+      printf("\r\033[31m%s: %s\033[0m\n", host.name, host.msg);
       str_overwrite_stdout();
+      fputs(host.name, fptr);
+      fputs("> ", fptr);
+      fputs(host.msg, fptr);
+      fputs("\n", fptr);
     }
     else if (recieve == 0)
     {
       break;
     }
-    else if (strncmp(msg_in, "exit", 4) == 0)
+    else if (strncmp(host.msg, "exit", 4) == 0)
     {
       close(CSFD);
       exit(EXIT_SUCCESS);
@@ -107,14 +122,14 @@ void *read_msg()
 
 void *send_msg()
 {
-  char msg_out[MSG_LEN] = {};
+  client.msg;
   while (1)
   {
     str_overwrite_stdout();
-    while (fgets(msg_out, MSG_LEN, stdin) != NULL)
+    while (fgets(client.msg, MSG_LEN, stdin) != NULL)
     {
-      msg_out[strcspn(msg_out, "\n")] = '\0';
-      if (strlen(msg_out) == 0)
+      client.msg[strcspn(client.msg, "\n")] = '\0';
+      if (strlen(client.msg) == 0)
       {
         str_overwrite_stdout();
       }
@@ -123,8 +138,12 @@ void *send_msg()
         break;
       }
     }
-    send(CSFD, msg_out, MSG_LEN, 0);
-    if (strncmp(msg_out, "exit", 4) == 0)
+    send(CSFD, client.msg, MSG_LEN, 0);
+    fputs(client.name, fptr);
+    fputs("> ", fptr);
+    fputs(client.msg, fptr);
+    fputs("\n", fptr);
+    if (strncmp(client.msg, "exit", 4) == 0)
     {
       close(CSFD);
       exit(EXIT_SUCCESS);

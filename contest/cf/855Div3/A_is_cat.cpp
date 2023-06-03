@@ -1,5 +1,12 @@
+//! Bismillah
+
+/*
+Problem Source -> https://codeforces.com/contest/1800/problem/A
+*/
+
 #include "bits/stdc++.h"
 using namespace std;
+
 int main() {
   int t;
   cin >> t;

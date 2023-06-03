@@ -1,44 +1,19 @@
+//! Bismillah
+
+/*
+Problem Source -> https://codeforces.com/contest/
+*/
+
 #include "bits/stdc++.h"
 using namespace std;
 
-#define ll long long
-#define ull unsigned long long
-#define imx INT_MAX
-#define imn INT_MIN
+typedef int64_t lls;
+typedef uint64_t llu;
 
 int main() {
-  int t;
-  cin >> t;
-  while (t--) {
-    int n;
-    cin >> n;
-    ll arr[n];
-    int ans = 21, sum = 0;
-    for (int i = 0; i < n; i++) {
-      cin >> arr[i];
-      sum += arr[i];
-    }
-    if (sum % 2 != 0) {
-      for (int i = 0; i < n; i++) {
-        cin >> arr[i];
-        int an = 0;
-        if (arr[i] % 2 == 0) {
-          while ((arr[i] % 2) != 1) {
-            an++;
-            arr[i] /= 2;
-          }
-          ans = min(ans, an);
-        } else {
-          while ((arr[i] % 2) != 0) {
-            an++;
-            arr[i] /= 2;
-          }
-          ans = min(ans, an);
-        }
-      }
-      cout << ans << endl;
-    } else {
-      cout << 00 << endl;
-    }
-  }
+  ios_base::sync_with_stdio(0);
+  cin.tie(0), cout.tie(0);
+  int a, b, c;
+  cin >> a >> b >> c;
+  printf("%i\n", a ^ b + b ^ c + a ^ c);
 }

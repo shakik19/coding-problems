@@ -8,10 +8,10 @@ using namespace std;
 #define NO cout << "NO" << endl
 
 void solve() {
-  string s, ss;
-  cin >> ss;
-  ss = s;
-  reverse(s.begin(), s.end());
+  string s;
+  cin >> s;
+  string ss = s;
+  reverse(ss.begin(), ss.end());
   cout << s << ss << "\n";
 }
 

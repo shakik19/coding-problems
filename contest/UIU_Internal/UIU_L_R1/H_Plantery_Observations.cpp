@@ -1,17 +1,16 @@
+//! Bismillah
+
+/*
+? Problem Source -> https://codeforces.com/gym/104261/problem/H
+*/
+
 #include "bits/stdc++.h"
 using namespace std;
-
-#define lli long long int
-#define imx INT_MAX
-#define imn INT_MIN
-#define vi std::vector<int>
-#define YES cout << "YES" << endl
-#define NO cout << "NO" << endl
 
 int half_kmp(string str) {
   int len = str.length();
   int index = 0, i = 1;
-  vi lps(len, 0);
+  vector<int> lps(len, 0);
   while (i < len) {
     if (str[index] == str[i]) {
       lps[i] = index + 1;
@@ -29,7 +28,7 @@ int half_kmp(string str) {
   return lps[len - 1];
 }
 
-int main() {
+void solve() {
   int q;
   cin >> q;
   string s = "";
@@ -46,3 +45,5 @@ int main() {
     }
   }
 }
+
+int main() { solve(); }

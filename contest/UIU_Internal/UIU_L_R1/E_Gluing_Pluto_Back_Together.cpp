@@ -1,16 +1,13 @@
 //! Bismillah
+
+/*
+? Problem Source -> https://codeforces.com/gym/104261/problem/E
+*/
+
 #include "bits/stdc++.h"
 using namespace std;
 
-#define lli long long int;
-#define imx INT_MAX
-#define imn INT_MIN
-#define vi std::vector<int>
-#define YES cout << "YES" << endl
-#define NO cout << "NO" << endl
-#define ANS cout << ans << endl
-
-int main() {
+void solve() {
   int N;
   cin >> N;
   int graph[N][N];
@@ -20,14 +17,13 @@ int main() {
     }
   }
 
-  //! Held Karp
   int starter = 0;
-  vi o_vertex;
+  vector<int> o_vertex;
   for (int i = 0; i < N; i++) {
     if (i != starter) o_vertex.push_back(i);
   }
 
-  int min_cost = imx;
+  int min_cost = INT32_MAX;
 
   do {
     int cp_cost = 0, t_start = starter;
@@ -42,4 +38,10 @@ int main() {
   } while (next_permutation(o_vertex.begin(), o_vertex.end()));
 
   cout << min_cost << "\n";
+}
+
+int main() {
+  ios_base::sync_with_stdio(0);
+  cin.tie(0), cout.tie(0);
+  solve();
 }

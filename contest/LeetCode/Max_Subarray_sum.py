@@ -1,7 +1,7 @@
 #    Source: https://leetcode.com/problems/maximum-subarray/
-
+import sys
 class Solution:
-    def maxSubArray(self, nums: List[int]) -> int:
+    def max_subarray_sum(self, nums: List[int]) -> int:
         mx = -(sys.maxsize - 1)
         sum = 0
         for i in range(len(nums)):
